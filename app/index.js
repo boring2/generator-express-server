@@ -20,12 +20,16 @@ module.exports = yeoman.generators.Base.extend({
         name: 'description',
         message: 'Describe your server in a few words',
         default: 'Just a test'
+      },
+      {
+        name: 'port',
+        message: 'What port number do you want your server to use?',
+        default: '8080'
       }
     ];
 
     this.prompt(prompts, function(answers) {
-      this.name = answers.name;
-      this.description = answers.description;
+      this.answers = answers;
 
       done();
     }.bind(this));
@@ -39,9 +43,23 @@ module.exports = yeoman.generators.Base.extend({
         this.templatePath('package.json'),
         this.destinationPath('package.json'),
         {
-          name: this.name,
-          description: this.description
+          name: this.answers.name,
+          description: this.answers.description
         }
+      );
+    },
+
+    app: function() {
+      this.fs.copyTpl(
+        this.templatePath('app/app.js'),
+        this.destinationPath('app/app.js'),
+        {
+          port: this.answers.port
+        }
+      );
+      this.fs.copy(
+        this.templatePath('app/controllers/main.js'),
+        this.destinationPath('app/controllers/main.js')
       );
     },
 
@@ -59,5 +77,9 @@ module.exports = yeoman.generators.Base.extend({
         this.destinationPath('.gitignore')
       );
     }
+  },
+
+  install: function() {
+    this.npmInstall(['express'], {save: true});
   }
 });

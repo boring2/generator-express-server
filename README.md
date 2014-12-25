@@ -7,7 +7,7 @@ This generator will help you create an express server
 - .gitignore
 - ESLint
 - EditorConfig
-- Express entry point (app.js) with boiler plate to automatically load routers
+- Express entry point (app.js) with boiler plate to automatically load routes
 - Modular Gruntfile
 - Readme file
 - package.json
