@@ -45,7 +45,7 @@ module.exports = yeoman.generators.Base.extend({
       );
     },
 
-    projectfiles: function () {
+    dotFiles: function () {
       this.fs.copy(
         this.templatePath('.editorconfig'),
         this.destinationPath('.editorconfig')
@@ -53,6 +53,10 @@ module.exports = yeoman.generators.Base.extend({
       this.fs.copy(
         this.templatePath('.eslintrc'),
         this.destinationPath('.eslintrc')
+      );
+      this.fs.copy(
+        this.templatePath('.gitignore'),
+        this.destinationPath('.gitignore')
       );
     }
   }
