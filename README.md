@@ -1,4 +1,4 @@
-# generator-express-server [![Build Status](https://secure.travis-ci.org/soonick/generator-express-server.png?branch=master)](https://travis-ci.org/soonick/generator-express-server)
+# generator-express-server
 
 This generator will help you create an express server
 
