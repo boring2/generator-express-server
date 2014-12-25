@@ -3,59 +3,57 @@ var yeoman = require('yeoman-generator');
 var yosay = require('yosay');
 
 module.exports = yeoman.generators.Base.extend({
-  initializing: function () {
-    this.pkg = require('../package.json');
+  greet: function () {
+    this.log(yosay('Hello!\nIt\'s time to create an awesome express server!'));
   },
 
   prompting: function () {
     var done = this.async();
 
-    // Have Yeoman greet the user.
-    this.log(yosay(
-      'Welcome to the wicked generator!'
-    ));
+    var prompts = [
+      {
+        name: 'name',
+        message: 'How do you want to name this server?',
+        default: 'express-server'
+      },
+      {
+        name: 'description',
+        message: 'Describe your server in a few words',
+        default: 'Just a test'
+      }
+    ];
 
-    var prompts = [{
-      type: 'confirm',
-      name: 'someOption',
-      message: 'Would you like to enable this option?',
-      default: true
-    }];
-
-    this.prompt(prompts, function (props) {
-      this.someOption = props.someOption;
+    this.prompt(prompts, function(answers) {
+      this.name = answers.name;
+      this.description = answers.description;
 
       done();
     }.bind(this));
   },
 
   writing: {
-    app: function () {
-      this.fs.copy(
-        this.templatePath('_package.json'),
-        this.destinationPath('package.json')
-      );
-      this.fs.copy(
-        this.templatePath('_bower.json'),
-        this.destinationPath('bower.json')
+    // package.json is a template so lets do the correct replacements based on
+    // user input
+    packageJson: function () {
+      this.fs.copyTpl(
+        this.templatePath('package.json'),
+        this.destinationPath('package.json'),
+        {
+          name: this.name,
+          description: this.description
+        }
       );
     },
 
     projectfiles: function () {
       this.fs.copy(
-        this.templatePath('editorconfig'),
+        this.templatePath('.editorconfig'),
         this.destinationPath('.editorconfig')
       );
       this.fs.copy(
-        this.templatePath('jshintrc'),
-        this.destinationPath('.jshintrc')
+        this.templatePath('.eslintrc'),
+        this.destinationPath('.eslintrc')
       );
     }
-  },
-
-  install: function () {
-    this.installDependencies({
-      skipInstall: this.options['skip-install']
-    });
   }
 });
