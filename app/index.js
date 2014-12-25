@@ -84,7 +84,7 @@ module.exports = yeoman.generators.Base.extend({
         this.destinationPath('.eslintrc')
       );
       this.fs.copy(
-        this.templatePath('.gitignore'),
+        this.templatePath('gitignore'),
         this.destinationPath('.gitignore')
       );
     },
