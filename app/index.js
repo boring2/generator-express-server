@@ -63,7 +63,18 @@ module.exports = yeoman.generators.Base.extend({
       );
     },
 
-    dotFiles: function () {
+    grunt: function() {
+      this.fs.copy(
+        this.templatePath('Gruntfile.js'),
+        this.destinationPath('Gruntfile.js')
+      );
+      this.fs.copy(
+        this.templatePath('configs/grunt/eslint.js'),
+        this.destinationPath('configs/grunt/eslint.js')
+      );
+    },
+
+    dotFiles: function() {
       this.fs.copy(
         this.templatePath('.editorconfig'),
         this.destinationPath('.editorconfig')
@@ -81,5 +92,15 @@ module.exports = yeoman.generators.Base.extend({
 
   install: function() {
     this.npmInstall(['express'], {save: true});
+    this.npmInstall(
+      [
+        'grunt',
+        'load-grunt-tasks',
+        'grunt-eslint'
+      ],
+      {
+        saveDev: true
+      }
+    );
   }
 });

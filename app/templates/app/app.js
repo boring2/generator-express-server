@@ -18,7 +18,7 @@ function initRoutes() {
 
     files.forEach(function(file) {
       var name = file.replace('.js', '');
-      require(controllersFolder +  name);
+      require(controllersFolder + name);
     });
   });
 }

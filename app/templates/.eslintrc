@@ -7,11 +7,11 @@
     "brace-style": [2, "1tbs"],
     "no-spaced-func": [2, true],
     "valid-jsdoc": [2, {
-      "requireReturn": false
+      "requireReturn": false,
       "prefer": {
         "return": "returns"
       }
-    }]
+    }],
     "camelcase": [2, true],
     "space-in-brackets": [2, "never"],
     "space-infix-ops": [2, true],
