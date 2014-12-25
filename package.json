@@ -1,0 +1,26 @@
+{
+  "name": "generator-express-server",
+  "version": "0.0.0",
+  "description": "Easily create an express server",
+  "license": "MIT",
+  "main": "app/index.js",
+  "repository": "soonick/generator-express-server",
+  "author": {
+    "name": "Adrian Ancona Novelo",
+    "email": "soonick5@yahoo.com.mx",
+    "url": "https://github.com/soonick"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "dependencies": {
+    "yeoman-generator": "^0.18.0",
+    "yosay": "^0.3.0"
+  },
+  "peerDependencies": {
+    "yo": ">=1.0.0"
+  }
+}
