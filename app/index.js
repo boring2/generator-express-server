@@ -100,8 +100,9 @@ module.exports = yeoman.generators.Base.extend({
   install: function() {
     this.npmInstall(
       [
-        'express',
-        'cookie-parser'
+        'body-parser',
+        'cookie-parser',
+        'express'
       ],
       {save: true}
     );

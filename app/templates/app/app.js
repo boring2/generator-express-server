@@ -1,5 +1,6 @@
 'use strict';
 
+var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var express = require('express');
 var fs = require('fs');
@@ -7,6 +8,9 @@ var path = require('path');
 
 var  app = express();
 app.use(cookieParser());
+app.use(bodyParser.urlEncoded({
+  extended: true
+}));
 
 /**
  * Loads all routes from controllers folder
