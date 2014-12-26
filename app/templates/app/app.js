@@ -8,7 +8,7 @@ var path = require('path');
 
 var  app = express();
 app.use(cookieParser());
-app.use(bodyParser.urlEncoded({
+app.use(bodyParser.urlencoded({
   extended: true
 }));
 
