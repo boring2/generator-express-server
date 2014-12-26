@@ -98,16 +98,20 @@ module.exports = yeoman.generators.Base.extend({
   },
 
   install: function() {
-    this.npmInstall(['express'], {save: true});
+    this.npmInstall(
+      [
+        'express',
+        'cookie-parser'
+      ],
+      {save: true}
+    );
     this.npmInstall(
       [
         'grunt',
         'load-grunt-tasks',
         'grunt-eslint'
       ],
-      {
-        saveDev: true
-      }
+      {saveDev: true}
     );
   }
 });

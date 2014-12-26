@@ -1,10 +1,12 @@
 'use strict';
 
+var cookieParser = require('cookie-parser');
 var express = require('express');
 var fs = require('fs');
 var path = require('path');
 
 var  app = express();
+app.use(cookieParser());
 
 /**
  * Loads all routes from controllers folder
