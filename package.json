@@ -1,6 +1,6 @@
 {
   "name": "generator-express-server",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Easily create an express server",
   "license": "MIT",
   "main": "app/index.js",
