@@ -3,7 +3,7 @@
 ## Running
 
 ```
-node app/app.js
+npm start
 ```
 
 ## Static Analysis

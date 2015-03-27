@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "start": "node app/app.js"
+  },
   "name": "<%= name %>",
   "description": "<%= description %>",
   "version": "0.0.0"
