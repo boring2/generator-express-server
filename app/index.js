@@ -61,6 +61,10 @@ module.exports = yeoman.generators.Base.extend({
         this.templatePath('app/controllers/main.js'),
         this.destinationPath('app/controllers/main.js')
       );
+      this.fs.copy(
+        this.templatePath('tests/unit/app/app.spec.js'),
+        this.destinationPath('tests/unit/app/app.spec.js')
+      );
     },
 
     grunt: function() {
@@ -71,6 +75,10 @@ module.exports = yeoman.generators.Base.extend({
       this.fs.copy(
         this.templatePath('configs/grunt/eslint.js'),
         this.destinationPath('configs/grunt/eslint.js')
+      );
+      this.fs.copy(
+        this.templatePath('configs/grunt/mochaTest.js'),
+        this.destinationPath('configs/grunt/mochaTest.js')
       );
     },
 
@@ -111,7 +119,8 @@ module.exports = yeoman.generators.Base.extend({
         'grunt',
         'load-grunt-tasks',
         'grunt-eslint',
-        'grunt-cli'
+        'grunt-cli',
+        'grunt-mocha-test'
       ],
       {saveDev: true}
     );

@@ -28,7 +28,8 @@ module.exports = function(grunt) {
   // Register Custom Tasks
   // =================
   grunt.registerTask('health', [
-    'eslint'
+    'eslint',
+    'mochaTest'
   ]);
 
   grunt.registerTask('default', ['health']);
