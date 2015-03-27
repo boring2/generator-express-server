@@ -6,8 +6,8 @@
 npm start
 ```
 
-## Static Analysis
+## Static Analysis and tests
 
 ```
-grunt
+npm test
 ```
