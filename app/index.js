@@ -110,7 +110,8 @@ module.exports = yeoman.generators.Base.extend({
       [
         'grunt',
         'load-grunt-tasks',
-        'grunt-eslint'
+        'grunt-eslint',
+        'grunt-cli'
       ],
       {saveDev: true}
     );

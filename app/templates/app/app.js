@@ -6,7 +6,7 @@ var express = require('express');
 var fs = require('fs');
 var path = require('path');
 
-var  app = express();
+var app = express();
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({
   extended: true

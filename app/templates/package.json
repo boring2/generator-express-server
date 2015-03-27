@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "start": "node app/app.js"
+    "start": "node app/app.js",
+    "test": "./node_modules/grunt-cli/bin/grunt"
   },
   "name": "<%= name %>",
   "description": "<%= description %>",
