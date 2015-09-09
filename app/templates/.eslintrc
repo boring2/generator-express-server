@@ -5,16 +5,16 @@
   "rules": {
     "quotes": [1, "single"],
     "brace-style": [2, "1tbs"],
-    "no-spaced-func": [2, true],
+    "no-spaced-func": [2],
     "valid-jsdoc": [2, {
       "requireReturn": false,
       "prefer": {
         "return": "returns"
       }
     }],
-    "camelcase": [2, true],
-    "space-in-brackets": [2, "never"],
-    "space-infix-ops": [2, true],
+    "camelcase": [2],
+    "object-curly-spacing": [2, "never"],
+    "space-infix-ops": [2],
     "space-after-keywords": [2, "always"]
   }
 }
